@@ -45,6 +45,39 @@ public class LinkedList<T> {
         return size;
     }
 
+    @Override
+    public String toString() {
+        LinkedNode node=head;
+        StringBuffer output=new StringBuffer();
+        while(node!=null){
+            output.append("------>");
+            String value=node.getValue()!=null?node.getValue().toString():"";
+            output.append(value);
+            node=node.getNext();
+        }
+        output.append("------->null");
+        return output.toString();    //To change body of overridden methods use File | Settings | File Templates.
+    }
+
+    public LinkedNode<T> deleteNode(T value) {
+        if(head==null){
+            return null;
+        }
+        LinkedNode node=head;
+        if(node.getValue()==value){
+            head=node.getNext();
+            return head;
+        }
+
+        while(node.getNext()!=null){
+          if(value==node.getNext().getValue()){
+              node.setNext(node.getNext().getNext());
+              break;
+          }
+          node=node.getNext();
+        }
+        return head;
+    }
 }
 
 
