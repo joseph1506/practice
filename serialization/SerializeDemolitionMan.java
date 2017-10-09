@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 public class SerializeDemolitionMan {
 
     public void serialize(DemolitionMan dm) throws IOException {
-        FileOutputStream fs= new FileOutputStream("G://Learn//testSer.ser");
+        FileOutputStream fs= new FileOutputStream("C://Data//testSer.ser");
         ObjectOutputStream os=new ObjectOutputStream(fs);
         os.writeObject(dm);
         os.close();

@@ -6,7 +6,7 @@ import java.io.ObjectInputStream;
 
 public class DeSerializeDemolitionMan {
     public DemolitionMan deserialize() throws IOException, ClassNotFoundException {
-        FileInputStream fis=new FileInputStream("G://Learn//testSer.ser");
+        FileInputStream fis=new FileInputStream("C://Data//testSer.ser");
         ObjectInputStream ois= new ObjectInputStream(fis);
         DemolitionMan iAmBack=(DemolitionMan) ois.readObject();
         ois.close();
